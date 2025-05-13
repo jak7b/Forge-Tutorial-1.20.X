@@ -14,10 +14,7 @@ import java.util.List;
 import java.util.function.Consumer;
 
 public class ModRecipeProvider extends RecipeProvider implements IConditionBuilder {
-    private static final List<ItemLike> SAPPHIRE_SMELTABLES = List.of(
-            ModItems.RAW_SAPPHIRE.get()
-//            ModBlocks.SAPPHIRE_ORE.get()
-    );
+
 
     public ModRecipeProvider(PackOutput pOutput) {
         super(pOutput);
@@ -25,9 +22,9 @@ public class ModRecipeProvider extends RecipeProvider implements IConditionBuild
 
     @Override
     protected void buildRecipes(Consumer<FinishedRecipe> pWriter) {
-        oreBlasting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 1f, 150, "sapphire");
-        oreSmelting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 300, "sapphire");
-
+//        oreBlasting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 1f, 150, "sapphire");
+//        oreSmelting(pWriter, SAPPHIRE_SMELTABLES, RecipeCategory.MISC, ModItems.SAPPHIRE.get(), 0.25f, 300, "sapphire");
+//
 
         /// Shaped Recipe: 9 Sapphires → Sapphire Block
         // Uncomment when ModBlocks.SAPPHIRE_BLOCK is registered

@@ -17,9 +17,9 @@ public class ModItemModelProvider extends ItemModelProvider {
 
     @Override
     protected void registerModels() {
-        simpleItem(ModItems.SAPPHIRE); /// <- Creates normale json for item model, nothing complex, I fink.
-        simpleItem(ModItems.RAW_SAPPHIRE);
-//
+//        simpleItem(ModItems.SAPPHIRE); /// <- Creates normale json for item model, nothing complex, I fink.
+//        simpleItem(ModItems.RAW_SAPPHIRE);
+////
 //        simpleItem(ModItems.METAL_DETECTOR);
 //        simpleItem(ModItems.PINE_CONE);
 //        simpleItem(ModItems.STRAWBERRY);

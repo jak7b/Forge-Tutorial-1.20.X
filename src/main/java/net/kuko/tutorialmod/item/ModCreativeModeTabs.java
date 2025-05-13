@@ -13,19 +13,16 @@ public class ModCreativeModeTabs {
     public static final DeferredRegister<CreativeModeTab> CREATIVE_MODE_TABS =
             DeferredRegister.create(Registries.CREATIVE_MODE_TAB, TutorialMod.MOD_ID);
 
-
-
-
-    public static final RegistryObject<CreativeModeTab> TUTORIAL_SAPPHIRE_TAB = CREATIVE_MODE_TABS.register("sapphire_tab",
-            () -> CreativeModeTab.builder()
-                    .icon(() -> new ItemStack(ModItems.SAPPHIRE.get()))
-                    .title(Component.translatable("creativemodtab.sapphire_tab"))
-                    //.withTabsBefore()
-                    .displayItems((pParameters, pOutput) ->  {
-                        pOutput.accept(ModItems.RAW_SAPPHIRE.get());
-                        pOutput.accept(ModItems.SAPPHIRE.get());
-                    })
-                    .build());
+//    public static final RegistryObject<CreativeModeTab> TUTORIAL_SAPPHIRE_TAB = CREATIVE_MODE_TABS.register("sapphire_tab",
+//            () -> CreativeModeTab.builder()
+//                    .icon(() -> new ItemStack(ModItems.SAPPHIRE.get()))
+//                    .title(Component.translatable("creativemodtab.sapphire_tab"))
+//                    //.withTabsBefore()
+//                    .displayItems((pParameters, pOutput) ->  {
+//                        pOutput.accept(ModItems.RAW_SAPPHIRE.get());
+//                        pOutput.accept(ModItems.SAPPHIRE.get());
+//                    })
+//                    .build());
 
 
     public static void register(IEventBus bus) {
