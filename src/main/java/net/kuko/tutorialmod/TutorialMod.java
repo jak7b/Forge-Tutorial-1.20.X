@@ -1,6 +1,8 @@
 package net.kuko.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.kuko.tutorialmod.item.ModCreativeModeTabs;
+import net.kuko.tutorialmod.item.ModItems;
 import net.minecraft.client.Minecraft;
 import net.minecraft.core.registries.Registries;
 import net.minecraft.world.food.FoodProperties;
@@ -32,28 +34,31 @@ import org.slf4j.Logger;
 @Mod(TutorialMod.MOD_ID)
 public class TutorialMod {
     public static final String MOD_ID = "tutorialmod";
-    private static final Logger LOGGER = LogUtils.getLogger();
+    public static final Logger LOGGER = LogUtils.getLogger();
 
     public TutorialMod(FMLJavaModLoadingContext context) {
         IEventBus modEventBus = context.getModEventBus();
+
+        ModCreativeModeTabs.register(modEventBus);
+        ModItems.register(modEventBus);
+
+
         modEventBus.addListener(this::commonSetup);
 
 
         MinecraftForge.EVENT_BUS.register(this);
 
         modEventBus.addListener(this::addCreative);
-
-        context.registerConfig(ModConfig.Type.COMMON, Config.SPEC);
     }
 
     private void commonSetup(final FMLCommonSetupEvent event) {
     }
 
     private void addCreative(BuildCreativeModeTabContentsEvent event) {
-        if (event.getTabKey() == CreativeModeTabs.BUILDING_BLOCKS) {
-
+        if (event.getTabKey() == CreativeModeTabs.INGREDIENTS) {
+            event.accept(ModItems.SAPPHIRE);
+            event.accept(ModItems.RAW_SAPPHIRE);
         }
-
     }
 
     @SubscribeEvent
