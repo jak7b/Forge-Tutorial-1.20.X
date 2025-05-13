@@ -1,5 +1,6 @@
 package net.kuko.tutorialmod.datagen.loot;
 
+import net.kuko.tutorialmod.block.ModBlocks;
 import net.kuko.tutorialmod.item.ModItems;
 import net.minecraft.data.loot.BlockLootSubProvider;
 import net.minecraft.world.flag.FeatureFlagSet;
@@ -24,7 +25,8 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected void generate() {
-   //     this.dropSelf(ModBlocks.SAPPHIRE_BLOCK.get()); // <- Drops itself
+        this.dropSelf(ModBlocks.SAPPHIRE_BLOCK.get()); // <- Drops itself
+        this.dropSelf(ModBlocks.RAW_SAPPHIRE_BLOCK.get()); // <- Drops itself
 
 //        this.add(ModBlocks.SAPPHIRE_ORE.get(), // <- Creates copperLikeDrops. It drops Raw Sapphire.
 //                block -> createCopperLikeOreDrops(ModBlocks.SAPPHIRE_ORE.get(), ModItems.RAW_SAPPHIRE.get(), UniformGenerator.between(2f,6f)));
@@ -32,9 +34,7 @@ public class ModBlockLootTables extends BlockLootSubProvider {
 
     @Override
     protected Iterable<Block> getKnownBlocks() {
-//        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
-        // <- Uncomment when ModBlocks has been reached.
-        return null;
+        return ModBlocks.BLOCKS.getEntries().stream().map(RegistryObject::get)::iterator;
     }
 
 

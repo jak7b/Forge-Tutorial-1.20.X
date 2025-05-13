@@ -1,6 +1,7 @@
 package net.kuko.tutorialmod;
 
 import com.mojang.logging.LogUtils;
+import net.kuko.tutorialmod.block.ModBlocks;
 import net.kuko.tutorialmod.item.ModCreativeModeTabs;
 import net.kuko.tutorialmod.item.ModItems;
 import net.minecraft.client.Minecraft;
@@ -41,6 +42,7 @@ public class TutorialMod {
 
         ModCreativeModeTabs.register(modEventBus);
         ModItems.register(modEventBus);
+        ModBlocks.register(modEventBus);
 
 
         modEventBus.addListener(this::commonSetup);

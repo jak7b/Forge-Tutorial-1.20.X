@@ -1,6 +1,7 @@
 package net.kuko.tutorialmod.datagen;
 
 import net.kuko.tutorialmod.TutorialMod;
+import net.kuko.tutorialmod.block.ModBlocks;
 import net.minecraft.data.PackOutput;
 import net.minecraft.world.level.block.Block;
 import net.minecraftforge.client.model.generators.BlockStateProvider;
@@ -14,7 +15,8 @@ public class ModBlockStateProvider extends BlockStateProvider {
 
     @Override
     protected void registerStatesAndModels() {
-        //blockWithItem(ModBlocks.SAPPHIRE_BLOCK); <- Like this. Example.
+        blockWithItem(ModBlocks.SAPPHIRE_BLOCK);
+        blockWithItem(ModBlocks.RAW_SAPPHIRE_BLOCK);
     }
 
     /**
